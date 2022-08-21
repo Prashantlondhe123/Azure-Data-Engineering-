@@ -10,3 +10,16 @@
 -Azure logic app
 -Power Bi
 -Model building 
+
+#ETL:
+   ETL is an abbreviation of Extract, Transform and Load. In this process, an ETL tool extracts the data from different RDBMS source systems then transforms the data like applying calculations, concatenations, etc. and then load the data into the Data Warehouse system
+
+#ELT:
+- ELT is a different method of looking at the tool approach to data movement. Instead of transforming the data before it’s written, ELT lets the target system to do the transformation. The data first copied to the target and then transformed in place.
+-ELT usually used with no-Sql databases like Hadoop cluster, data appliance or cloud installation.
+
+#OLTP:
+-OLTP or Online Transaction Processing is a type of data processing that consists of executing a number of transactions occurring concurrently—online banking, shopping, order entry, or sending text messages, for example. These transactions traditionally are referred to as economic or financial transactions, recorded and secured so that an enterprise can access the information anytime for accounting or reporting purposes
+
+#OLAP:
+-OLAP on big data is a powerful concept that involves the pre-aggregation of massive amounts of data and builds multidimensional cubes to get super-fast query results
