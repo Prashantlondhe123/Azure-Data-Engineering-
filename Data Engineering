@@ -23,3 +23,37 @@
 
 #OLAP:
 -OLAP on big data is a powerful concept that involves the pre-aggregation of massive amounts of data and builds multidimensional cubes to get super-fast query results
+
+
+
+############################################Database####
+#SQL Server:
+SQL is a standard language for storing, manipulating and retrieving data in databases
+SQL stands for Structured Query Language
+SQL lets you access and manipulate databases
+SQL became a standard of the American National Standards Institute (ANSI) in 1986, and of the International Organization for Standardization (ISO) in 1987
+SQL can execute queries against a database
+SQL can retrieve data from a database
+SQL can insert records in a database
+SQL can update records in a database
+SQL can delete records from a database
+SQL can create new databases
+SQL can create new tables in a database
+SQL can create stored procedures in a database
+SQL can create views in a database
+SQL can set permissions on tables, procedures, and views
+
+# azure Cosmosdb:
+ Azure Cosmos DB is Microsoft’s globally distributed, multi-model database. Azure Cosmos DB enables you to elastically and
+independently scale throughput and storage across any number of Azure’s geographic regions. It offers throughput, latency, 
+availability, and consistency guarantees with comprehensive service level agreements (SLAs). Azure Cosmos DB provides APIs for
+the following data models, with SDKs available in multiple languages
+-SQL API
+-MongoDB API
+-Cassandra API
+-Graph (Gremlin) API
+-Table API
+
+#
+
+
