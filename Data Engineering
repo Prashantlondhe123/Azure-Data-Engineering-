@@ -72,3 +72,39 @@ Features of Cassandra:
 -Always on Architecture
 -Fast linear-scale performance
 -Transaction support
+
+# Apache hive:
+    Apache Hive is open-source data warehouse software designed to read, write, and manage large datasets extracted from the Apache Hadoop Distributed File System (HDFS) , one aspect of a larger Hadoop Ecosystem.
+-Apache Hive is an open source project that was conceived of by co-creators Joydeep Sen Sarma and Ashish Thusoo during their time at Facebook
+
+@Apache Hive architecture and key Apache Hive components:
+1)Hive Server 2
+The Hive Server 2 accepts incoming requests from users and applications and creates an execution plan and auto generates a YARN job to process SQL queries. The server also supports the Hive optimizer and Hive compiler to streamline data extraction and processing.
+
+2)Hive Query Language
+By enabling the implementation of SQL-reminiscent code, the Apache Hive negates the need for long-winded JavaScript codes to sort through unstructured data and allows users to make queries using built-in HQL statements (HQL). These statements can be used to navigate large datasets, refine results, and share data in a cost-effective and time-efficient manner.
+
+3)The Hive Metastore
+The central repository of the Apache Hive infrastructure, the metastore is where all of the Hive’s metadata is stored. In the metastore, metadata can also be formatted into Hive tables and partitions to compare data across relational databases. This includes table names, column names, data types, partition information, and data location on HDFS.
+
+4)Hive Beeline Shell
+In line with other database management systems (DBMS), Hive has its own built-in command-line interface where users can run HQL statements. Also, the Hive shell also runs Hive JDBC and ODBC drivers and so can conduct queries from an Open Database Connectivity or Java Database Connectivity application.
+
+
+@What are the five different data types used by Apache Hive?:
+1)Numeric Data Types:
+As the name suggests, these data types are integer-based data types. Examples of these data types are ‘TINYINT,’ ‘SMALLINT,’ ‘INT,’ and ‘BIGINT’.
+
+2)Date/Time Data Types:
+These data types allow users to input a time and a date, with ‘TIMESTAMP,’ ‘DATE,’ and ‘INTERVAL,’ all being accepted inputs.
+
+3)String Data Types:
+Again this type of data is very straightforward and allows for written text, or ‘strings,’ to be implemented as data for processing. String data types include ‘STRING,’ ‘VARCHAR,’ and ‘CHAR.’
+
+4)Complex Data Types:
+One of the more advanced data types, complex types record more elaborate data and consist of types like ‘STRUCT’, ‘MAP,’ ‘ARRAY,’ and ‘UNION.’
+
+5)Misc. Types:
+Data types that don’t fit into any of the other four categories are known as miscellaneous data types and can take inputs such as ‘BOOLEAN’ or ‘BINARY.’
+
+@
