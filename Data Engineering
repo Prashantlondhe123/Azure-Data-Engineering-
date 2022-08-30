@@ -26,7 +26,7 @@
 
 
 
-############################################Database####
+############################################Database#################################
 #SQL Server:
 SQL is a standard language for storing, manipulating and retrieving data in databases
 SQL stands for Structured Query Language
@@ -54,6 +54,21 @@ the following data models, with SDKs available in multiple languages
 -Graph (Gremlin) API
 -Table API
 
-#
+# Apache Cassandra:
+ Apache Cassandra is an open-source no SQL database that is used for handling big data. Apache Cassandra has the
+capability to handle structure, semi-structured, and unstructured data. Apache Cassandra was originally developed at Facebook after
+that it was open-sourced in 2008 and after that, it become one of the top-level Apache projects in 2010.
 
+It is scalable, fault-tolerant, and consistent.
+It is column-oriented database.
+Its distributed design is based on Amazon’s Dynamo and its data model on Google’s Big table.
+It is Created at Facebook and it differs sharply from relational database management systems
 
+Features of Cassandra:
+-Easy data distribution
+-Flexible data storage
+-Elastic scalability
+-Fast writes
+-Always on Architecture
+-Fast linear-scale performance
+-Transaction support
