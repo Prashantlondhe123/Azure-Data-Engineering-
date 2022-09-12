@@ -43,7 +43,7 @@ SQL can create stored procedures in a database
 SQL can create views in a database
 SQL can set permissions on tables, procedures, and views
 
-# azure Cosmosdb:
+## azure Cosmosdb:
  Azure Cosmos DB is Microsoft’s globally distributed, multi-model database. Azure Cosmos DB enables you to elastically and
 independently scale throughput and storage across any number of Azure’s geographic regions. It offers throughput, latency, 
 availability, and consistency guarantees with comprehensive service level agreements (SLAs). Azure Cosmos DB provides APIs for
@@ -54,7 +54,7 @@ the following data models, with SDKs available in multiple languages
 -Graph (Gremlin) API
 -Table API
 
-# Apache Cassandra:
+## Apache Cassandra:
  Apache Cassandra is an open-source no SQL database that is used for handling big data. Apache Cassandra has the
 capability to handle structure, semi-structured, and unstructured data. Apache Cassandra was originally developed at Facebook after
 that it was open-sourced in 2008 and after that, it become one of the top-level Apache projects in 2010.
@@ -73,7 +73,7 @@ Features of Cassandra:
 -Fast linear-scale performance
 -Transaction support
 
-# Apache hive:
+## Apache hive:
     Apache Hive is open-source data warehouse software designed to read, write, and manage large datasets extracted from the Apache Hadoop Distributed File System (HDFS) , one aspect of a larger Hadoop Ecosystem.
 -Apache Hive is an open source project that was conceived of by co-creators Joydeep Sen Sarma and Ashish Thusoo during their time at Facebook
 
@@ -107,15 +107,19 @@ One of the more advanced data types, complex types record more elaborate data an
 5)Misc. Types:
 Data types that don’t fit into any of the other four categories are known as miscellaneous data types and can take inputs such as ‘BOOLEAN’ or ‘BINARY.’
 
-# Hbase:
+## Hbase:
 -HBase is a column-oriented non-relational database management system that runs on top of Hadoop Distributed File System (HDFS). HBase provides a fault-tolerant way of storing sparse data sets, which are common in many big data use cases. It is well suited for real-time data processing or random read/write access to large volumes of data.
 -HBase is a data model that is similar to Google’s big table designed to provide quick random access to huge amounts of structured data. It leverages the fault tolerance provided by the Hadoop File System (HDFS).
 -It is a part of the Hadoop ecosystem that provides random real-time read/write access to data in the Hadoop File System
 
-# Apache kafka:
+## Apache kafka:
 Apache Kafka is an open-source distributed event streaming platform used by thousands of companies for high-performance data pipelines, streaming analytics, data integration, and mission-critical applications.
 
-#difference among data warehouse, data lake, Delta lake
+##Apache Snowflake:
+-Snowflake is a single platform comprised of storage, compute, and services layers that are logically integrated but scale infinitely and independent from one another.
+-Snowflake is a cloud data warehouse built on top of the public cloud (AWS/Azure / GCP) infrastructure and is a true SaaS offering. There is no hardware (virtual or physical) for you to select, install, configure, or manage. There is no software for you to install, configure, or manage. All ongoing maintenance, management, and tuning is handled by Snowflake.
+
+##difference among data warehouse, data lake, Delta lake
 1] DATA WAREHOUSE:
 -Only Structured Data
 -Schema-on-Write
