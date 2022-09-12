@@ -26,7 +26,7 @@
 
 
 
-############################################Database#################################
+############################################Database #################################
 #SQL Server:
 SQL is a standard language for storing, manipulating and retrieving data in databases
 SQL stands for Structured Query Language
@@ -139,3 +139,35 @@ Apache Kafka is an open-source distributed event streaming platform used by thou
 -Does not corrupt the system
 
 ############################################### file format. #######################
+File Formats:
+1]CSV: Good option for compatibility, spreadsheet processing and human readable data. The data must be flat. It is not efficient and cannot handle nested data. There may be issues with the separator which can lead to data quality issues. Use this format for exploratory analysis, POCs or small data sets.
+2]JSON: Heavily used in APIs. Nested format. It is widely adopted and human readable but it can be difficult to read if there are lots of nested fields. Great for small data sets, landing data or API integration. If possible convert to more efficient format before processing large amounts of data.
+3]Avro: Great for storing row data, very efficient. It has a schema and supports evolution. Great integration with Kafka. Supports file splitting. Use it for row level operations or in Kafka. Great to write data, slower to read.
+4]Protocol Buffers: Great for APIs, especially for gRPC. Supports Schema and it is very fast. Use for APIs or machine learning.
+5]Parquet: Columnar storage. It has schema support. It works very well with Hive and Spark as a way to store columnar data in deep storage that is queried using SQL. Because it stores data in columns, query engines will only read files that have the selected columns and not the entire data set as opposed to Avro. Use it as a reporting layer.
+6]ORC: Similar to Parquet, it offers better compression. It also provides better schema evolution support as well, but it is less popular.
+
+1] Avro:
+Schema Evolution -Best
+Compression - Good
+Splitability - Good
+Row or Column - Row
+Read or Write- Write
+
+1] Parquet:
+Schema Evolution -Good
+Compression - Better
+Splitability - Good
+Row or Column - Column
+Read or Write-  Read
+
+1] ORC:
+Schema Evolution -Better
+Compression - best
+Splitability - best
+Row or Column - column
+Read or Write- read
+
+
+
+
