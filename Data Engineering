@@ -11,6 +11,12 @@
 -Power Bi
 -Model building 
 
+#structured, semi structure, unstructure data:
+Structured: csv ,excel , database, Parquet/orc/avro can we structured and semi-structured
+Unstructured: text, video ,audio, images, number, messages, social media post, survey forms,
+Semi structured data: email, www,xml,pdf
+
+
 #ETL:
    ETL is an abbreviation of Extract, Transform and Load. In this process, an ETL tool extracts the data from different RDBMS source systems then transforms the data like applying calculations, concatenations, etc. and then load the data into the Data Warehouse system
 
