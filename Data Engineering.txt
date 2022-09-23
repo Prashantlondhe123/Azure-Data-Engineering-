@@ -1,4 +1,12 @@
-#Data Engineering: 
+# Data Engineering:
+-Data engineering is the practice of designing and building systems for collecting, storing, and
+analyzing data at scale.
+-Data engineers work in a variety of settings to build systems that collect, manage, and convert raw 
+data into usable information for data scientists and business analysts to interpret
+
+
+
+#cloud Data Engineering: 
     A cloud data engineer, also known as a cloud engineer or cloud developer, is someone responsible 
 for the management of corporate apps and data in the cloud and all the technical tasks involved in
 planning, architecting, migrating, monitoring, and managing a company's cloud systems
