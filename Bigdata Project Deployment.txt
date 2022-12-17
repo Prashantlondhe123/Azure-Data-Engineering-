@@ -1,0 +1,6 @@
+#Bigdata Project Deployment:
+ Stages:
+1) Laptop
+2)Dev(Development)
+3)Test/UAT(User acceptance testing)
+4)Prod (Production)
