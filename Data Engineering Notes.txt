@@ -1,0 +1,356 @@
+# Pandas :
+Here are essential Pandas functions for ETL (Extract, Transform, Load) processes, along with examples:
+
+*Extract*
+
+1. `read_csv()`: Read CSV file
+
+```
+df = pd.read_csv('data.csv')
+```
+
+1. `read_excel()`: Read Excel file
+
+```
+df = pd.read_excel('data.xlsx')
+```
+
+1. `read_sql()`: Read SQL database
+
+```
+df = pd.read_sql('SELECT * FROM table', conn)
+```
+
+1. `read_json()`: Read JSON file
+
+```
+df = pd.read_json('data.json')
+```
+
+*Transform*
+
+1. `drop()`: Remove rows/columns
+
+```
+df.drop(columns=['column1', 'column2'], inplace=True)
+```
+
+1. `rename()`: Rename columns
+
+```
+df.rename(columns={'old_name': 'new_name'}, inplace=True)
+```
+
+1. `merge()`: Join datasets
+
+```
+df_merged = pd.merge(df1, df2, on='common_column')
+```
+
+1. `groupby()`: Group data
+
+```
+df_grouped = df.groupby('column').sum()
+```
+
+1. `pivot_table()`: Create pivot table
+
+```
+df_pivot = pd.pivot_table(df, values='value', index='column1', columns='column2')
+```
+
+1. `melt()`: Unpivot data
+
+```
+df_melted = pd.melt(df, id_vars='column1', value_vars='column2')
+```
+
+1. `sort_values()`: Sort data
+
+```
+df_sorted = df.sort_values(by='column', ascending=False)
+```
+
+1. `drop_duplicates()`: Remove duplicates
+
+```
+df_unique = df.drop_duplicates(subset='column', keep='first')
+```
+
+1. `fillna()`: Replace missing values
+
+```
+df_filled = df.fillna(value='replacement')
+```
+
+1. `astype()`: Convert data types
+
+```
+df_converted = df.astype({'column': 'int'})
+```
+
+*Load*
+
+1. `to_csv()`: Write CSV file
+
+```
+df.to_csv('output.csv', index=False)
+```
+
+1. `to_excel()`: Write Excel file
+
+```
+df.to_excel('output.xlsx', index=False)
+```
+
+1. `to_sql()`: Write SQL database
+
+```
+df.to_sql('table', conn, if_exists='replace', index=False)
+```
+
+1. `to_json()`: Write JSON file
+
+```
+df.to_json('output.json', orient='records')
+```
+
+Additional functions:
+
+- `describe()`: Summary statistics
+- `info()`: Dataframe information
+- `head()`: First few rows
+- `tail()`: Last few rows
+- `shape`: Dataframe dimensions
+- `columns`: Column names
+- `index`: Index names
+- `loc[]`: Label-based selection
+- `iloc[]`: Position-based selection
+
+
+
+pip install pyspark
+
+from pyspark.sql import SparkSession
+
+spark = SparkSession.builder.getOrCreate()
+
+data = [("John", 25), ("Alice", 30), ("Bob", 35)]
+
+df = spark.createDataFrame(data, ["Name", "Age"])
+
+df.show()
+
+df.head()
+
+df.tail(2)
+
+df.printSchema()
+
+df.describe()
+
+df.columns
+
+from pyspark.sql.functions import *
+
+df=df.withColumn('LName',lit(int(60)))
+df.head()
+
+df.show()
+
+df.orderBy(df.Age.desc()).show()
+
+df.createOrReplaceTempView('People')
+df2=spark.sql('select * from People')
+df2.show()
+
+spark.sql("""select Name,Age,LName, 'Hey'as Fname from People""").show()
+
+
+#####################################
+#Pandas Notes 
+import pandas as pd
+import numpy as np
+
+df=pd.DataFrame({'C1':range(1000),'C2':'Hey there','C3':'03/12/2024','C4':' ','C5':True})
+df.head()
+
+df.info()
+
+df.describe()
+
+df.columns
+
+df.index
+
+df.count()
+
+df.tail()
+
+df.to_parquet(r'data.parquet')
+print('written successfully ')
+
+df.to_csv('marketdata.csv')
+print('written')
+
+df1=pd.read_csv('marketdata.csv')
+df1.head()
+
+df2=pd.DataFrame({'ID':range(1,10),'Fname':'Shashant'})
+df3=pd.DataFrame({'ID':range(5,10),'Lname':'Thombare'})
+df2.head()
+df3.head()
+
+df2.tail(10)
+
+#df4=pd.merge(df2,df3,on='ID',how='inner')
+#df4=pd.merge(df2,df3,on='ID',how='left')
+
+#df4=pd.merge(df2,df3,on='ID',how='right')
+
+#df4=pd.merge(df2,df3,on='ID',how='outer')
+
+df4=pd.merge(df2,df3,how='cross')
+
+df4.head(11)
+
+df.drop(columns='C1')
+print('Deleted Successfully')
+
+df=df.rename(columns={'C1':'Num'})
+df.head()
+
+df=df.sort_values(by='Num',ascending=False)
+df.head()
+
+df['C3']=df['C3'].astype('datetime64[ns]')
+df.dtypes
+
+df.head()
+
+df=df.fillna('Missing')
+df.head()
+
+
+## #######
+In SQL, pivot and unpivot are operations that transform data from one format to another.
+
+*Pivot:*
+
+A pivot operation rotates data from a state of rows to columns. It's used to transform repeated measures or values into separate columns.
+
+*Example:*
+
+Suppose we have a table `Sales` with columns `Region`, `Year`, and `SalesAmount`.
+
+```
++--------+------+-------------+
+| Region | Year | SalesAmount |
++--------+------+-------------+
+| North  | 2020 | 1000        |
+| North  | 2021 | 1200        |
+| South  | 2020 | 800         |
+| South  | 2021 | 900         |
+| East   | 2020 | 1100        |
+| East   | 2021 | 1300        |
++--------+------+-------------+
+```
+
+Using pivot, we can transform this data into:
+
+```
++--------+------+------+
+| Region | 2020 | 2021 |
++--------+------+------+
+| North  | 1000 | 1200 |
+| South  | 800  | 900  |
+| East   | 1100 | 1300 |
++--------+------+------+
+```
+
+*SQL Pivot Syntax (using SQL Server):*
+
+```
+SELECT 
+    Region,
+    [2020] AS Sales2020,
+    [2021] AS Sales2021
+FROM 
+    (SELECT Region, Year, SalesAmount FROM Sales) AS SourceTable
+PIVOT 
+    (SUM(SalesAmount) FOR Year IN ([2020], [2021])) AS PivotTable;
+```
+
+*Unpivot:*
+
+An unpivot operation does the opposite of pivot; it transforms columns into rows.
+
+*Example:*
+
+Suppose we have a table `Sales` with columns `Region`, `Sales2020`, and `Sales2021`.
+
+```
++--------+------+------+
+| Region | 2020 | 2021 |
++--------+------+------+
+| North  | 1000 | 1200 |
+| South  | 800  | 900  |
+| East   | 1100 | 1300 |
++--------+------+------+
+```
+
+Using unpivot, we can transform this data into:
+
+```
++--------+------+-------------+
+| Region | Year | SalesAmount |
++--------+------+-------------+
+| North  | 2020 | 1000        |
+| North  | 2021 | 1200        |
+| South  | 2020 | 800         |
+| South  | 2021 | 900         |
+| East   | 2020 | 1100        |
+| East   | 2021 | 1300        |
++--------+------+-------------+
+```
+
+*SQL Unpivot Syntax (using SQL Server):*
+
+```
+SELECT 
+    Region,
+    Year,
+    SalesAmount
+FROM 
+    (SELECT Region, Sales2020, Sales2021 FROM Sales) AS SourceTable
+UNPIVOT 
+    (SalesAmount FOR Year IN ([2020], [2021])) AS UnpivotTable;
+```
+
+######### difference among RDD   , dataframe, dataset .
+RDD 
+1. RDD stands for a resilient distributed dataset 
+2. RDD has no scheme 
+3. there is no optimizer in RDD 
+4. RDD does not have SQL support .
+5. we can create RDD in Java , scala, python , R programming language
+[9/17, 4:04 PM] ER PRASHANT LONDHE: 
+
+Dataframe :
+1. data frame is fault tolerant.
+2. data frame has schema 
+3. we have optimizer for data frame that is catalyst optimizer.
+4. data frame has a SQL support
+5. can create a data frame in java ,scala,  python programming language 
+6. data from takes high  memory for storage
+
+Dataset : 
+1. dataset  is fault tolerant.
+2. dataset  has schema 
+3. we have optimizer for dataset  that is catalyst optimizer.
+4. dataset has a SQL support
+5. we can create a data frame in java ,scala,  programming language 
+6. dataset  takes less   memory for storage
+
+
+#####
