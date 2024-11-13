@@ -232,9 +232,7 @@ df=df.fillna('Missing')
 df.head()
 
 
-## #######
-In SQL, pivot and unpivot are operations that transform data from one format to another.
-
+########################## SQL 
 *Pivot:*
 
 A pivot operation rotates data from a state of rows to columns. It's used to transform repeated measures or values into separate columns.
@@ -327,6 +325,48 @@ UNPIVOT
     (SalesAmount FOR Year IN ([2020], [2021])) AS UnpivotTable;
 ```
 
+###
+#### Stored Procedure 
+
+A SQL stored procedure is a reusable, compiled block of SQL code that performs a specific task or set of tasks. It's stored in the database and can be executed multiple times with different input parameters.
+
+*Benefits:*
+
+1. Improved performance
+2. Reduced code duplication
+3. Enhanced security
+4. Simplified maintenance
+
+*Example:*
+
+
+CREATE PROCEDURE sp_GetEmployeeDetails
+    @EmployeeID int
+AS
+BEGIN
+    SELECT FirstName, LastName, Department
+    FROM Employees
+    WHERE EmployeeID = @EmployeeID
+END
+```
+
+```
+EXEC sp_GetEmployeeDetails @EmployeeID = 101
+```
+
+#### View : 
+
+CREATE VIEW [Brazil Customers] AS
+SELECT CustomerName, ContactName
+FROM Customers
+WHERE Country = 'Brazil';
+
+We can query the view above as follows:
+SELECT * FROM [Brazil Customers];
+
+### difference between clustered index and non cluster index
+
+##///@
 ######### difference among RDD   , dataframe, dataset .
 RDD 
 1. RDD stands for a resilient distributed dataset 
